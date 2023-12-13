@@ -24,11 +24,11 @@ pipeline {
             steps {
                 script {
                     // Copy artifact to Tomcat webapps folder
-                    sh 'cp target/*.war /home/azureuser/apache-tomcat-9.0.83/webapps/'
+                    sh 'cp target/*.war /usr/local/tomcat/webapps/'
  
                     // Restart Tomcat
-                    sh '/home/azureuser/apache-tomcat-9.0.83/bin/shutdown.sh'
-                    sh '/home/azureuser/apache-tomcat-9.0.83/bin/startup.sh'
+                    sh '/usr/local/tomcat/bin/shutdown.sh'
+                    sh '/usr/local/tomcat/bin/startup.sh'
                 }
             }
         }
