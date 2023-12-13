@@ -14,7 +14,11 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                    cp "/var/lib/jenkins/workspace/hello world pipeline proj/webapp/target/webapp.war /var/lib/jenkins/workspace/hello world pipeline proj/tomcat/webapps/"
+                    cp -r "/var/lib/jenkins/workspace/hello world pipeline proj/webapp/target/webapp.war /var/lib/jenkins/workspace/hello world pipeline proj/tomcat/webapps/"
+                
+                    // Restart Tomcat
+                    sh '/var/lib/jenkins/workspace/hello world pipeline proj/tomcat/shutdown.sh'
+                    sh '/var/lib/jenkins/workspace/hello world pipeline proj/tomcat/bin/startup.sh'
 
                 
                 }
