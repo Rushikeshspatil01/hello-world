@@ -24,7 +24,7 @@ pipeline {
             steps {
                 script {
                     // Copy artifact to Tomcat webapps folder
-                    sh 'cp target/*.war /usr/local/tomcat/webapps/'
+                    sh 'cp /usr/src/app/target/*.war /usr/local/tomcat/webapps/'
  
                     // Restart Tomcat
                     sh '/usr/local/tomcat/bin/shutdown.sh'
