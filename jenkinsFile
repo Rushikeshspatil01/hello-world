@@ -6,6 +6,7 @@ pipeline {
             steps {
                 script {
                     // Your build steps here
+                    sh 'mvn clean install'
                 }
             }
         }
