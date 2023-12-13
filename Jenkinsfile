@@ -23,13 +23,12 @@ pipeline {
 stage('Deploy') {
             steps {
                 script {
-                    def targetDirectory = "/var/lib/jenkins/workspace/hello world pipeline proj/tomcat/webapps/"
-                    
-                    // Ensure the target directory exists
-                    sh "mkdir -p ${targetDirectory}"
-
-                    // Copy the .war file to the target directory
-                    sh "cp /var/lib/jenkins/workspace/hello world pipeline proj/webapp/target/*.war ${targetDirectory}"
+                    // Copy artifact to Tomcat webapps folder
+                    sh 'cp /var/lib/jenkins/workspace/'hello world pipeline proj'/webapp/target/*.war /var/lib/jenkins/workspace/'hello world pipeline proj'/tomcat/webapps/.'
+ 
+                    // Restart Tomcat
+                    sh '/usr/local/tomcat/bin/shutdown.sh'
+                    sh '/usr/local/tomcat/bin/startup.sh'
                 }
             }
         }
