@@ -14,8 +14,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                    sourceDirectory = "/var/lib/jenkins/workspace/hello world pipeline proj/webapp/target/*.war"
-                    targetDirectory = "/var/lib/jenkins/workspace/hello world pipeline proj/tomcat/webapps/ ."
+                    sourceDirectory = "/var/lib/jenkins/workspace/hello world pipeline proj/webapp/target/webapp.war"
+                    targetDirectory = "/var/lib/jenkins/workspace/hello world pipeline proj/tomcat/webapps/"
 
                     // Ensure the target directory exists
                     sh "mkdir -p ${targetDirectory}"
