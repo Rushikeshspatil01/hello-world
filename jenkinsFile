@@ -1,0 +1,27 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                script {
+                    // Your build steps here
+                }
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                script {
+                    def targetDirectory = "/var/lib/jenkins/workspace/hello world pipeline proj/tomcat/webapps/"
+                    
+                    // Ensure the target directory exists
+                    sh "mkdir -p ${targetDirectory}"
+
+                    // Copy the .war file to the target directory
+                    sh "cp /var/lib/jenkins/workspace/hello world pipeline proj/webapp/target/*.war ${targetDirectory}"
+                }
+            }
+        }
+    }
+}
