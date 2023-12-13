@@ -24,7 +24,11 @@ pipeline {
                     sh "cp ${sourceDirectory}*.war ${targetDirectory}"
 
                    // Restart Tomcat
-                   // sh '/home/azureuser/apache-tomcat-9.0.83/bin/shutdown.sh'
+                   // Ensure execute permissions on shutdown.sh
+                    sh "chmod +x /home/azureuser/apache-tomcat-9.0.83/bin/shutdown.sh"
+
+                    // Shutdown Tomcat with sudo if necessary
+                    sh "sudo /home/azureuser/apache-tomcat-9.0.83/bin/shutdown.sh"
                   // sh '/home/azureuser/apache-tomcat-9.0.83/bin/startup.sh'
                 }
             }
