@@ -4,6 +4,6 @@
 
 FROM tomcat:latest
  # Copy your artifact to Tomcat webapps folder
-COPY target/*.war /home/azureuser/apache-tomcat-9.0.83/webapps
+COPY target/webapp.war /home/azureuser/apache-tomcat-9.0.83/webapps
  # Expose Tomcat port
 EXPOSE 8084
