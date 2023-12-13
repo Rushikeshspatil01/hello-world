@@ -14,14 +14,9 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                    sourceDirectory = "/var/lib/jenkins/workspace/hello world pipeline proj/webapp/target/webapp.war"
-                    targetDirectory = "/var/lib/jenkins/workspace/hello world pipeline proj/tomcat/webapps/"
+                    cp "/var/lib/jenkins/workspace/hello world pipeline proj/webapp/target/webapp.war /var/lib/jenkins/workspace/hello world pipeline proj/tomcat/webapps/"
 
-                    // Ensure the target directory exists
-                    sh "mkdir -p ${targetDirectory}"
-
-                    // Copy the .war file to the target directory
-                    sh "cp \"${sourceDirectory}/*.war\" \"${targetDirectory}\""
+                
                 }
             }
         }
