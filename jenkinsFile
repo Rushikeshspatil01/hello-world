@@ -24,8 +24,8 @@ pipeline {
                     sh "cp ${sourceDirectory}*.war ${targetDirectory}"
 
                    // Restart Tomcat
-                    sh '/var/lib/jenkins/workspace/helloworld/tomcat/bin/shutdown.sh'
-                    sh '/var/lib/jenkins/workspace/helloworld/tomcat/bin/startup.sh'
+                    sh '/home/azureuser/apache-tomcat-9.0.83/bin/shutdown.sh'
+                    sh '/home/azureuser/apache-tomcat-9.0.83/bin/startup.sh'
                 }
             }
         }
