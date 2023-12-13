@@ -22,6 +22,10 @@ pipeline {
 
                     // Copy the .war file to the target directory
                     sh "cp ${sourceDirectory}*.war ${targetDirectory}"
+
+                   // Restart Tomcat
+                    sh '/usr/local/tomcat/bin/shutdown.sh'
+                    sh '/usr/local/tomcat/bin/startup.sh'
                 }
             }
         }
