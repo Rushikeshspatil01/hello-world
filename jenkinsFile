@@ -25,7 +25,7 @@ pipeline {
 
                    // Restart Tomcat
                    // Ensure execute permissions on shutdown.sh
-                    sh "chmod +x /home/azureuser/apache-tomcat-9.0.83/bin/shutdown.sh"
+                    sh "chmod 777 /home/azureuser/apache-tomcat-9.0.83/bin/shutdown.sh"
 
                     // Shutdown Tomcat with sudo if necessary
                     sh "sudo /home/azureuser/apache-tomcat-9.0.83/bin/shutdown.sh"
