@@ -24,11 +24,11 @@ stage('Deploy') {
             steps {
                 script {
                     // Copy artifact to Tomcat webapps folder
-                    sh 'cp /var/lib/jenkins/workspace/'hello world pipeline proj'/webapp/target/*.war /var/lib/jenkins/workspace/'hello world pipeline proj'/tomcat/webapps/.'
+                    sh 'cp /var/lib/jenkins/workspace/hello world pipeline proj/webapp/target/*.war /var/lib/jenkins/workspace/hello world pipeline proj/tomcat/webapps/.'
  
                     // Restart Tomcat
-                    sh '/usr/local/tomcat/bin/shutdown.sh'
-                    sh '/usr/local/tomcat/bin/startup.sh'
+                    sh '/var/lib/jenkins/workspace/hello world pipeline proj/tomcat/shutdown.sh'
+                    sh '/var/lib/jenkins/workspace/hello world pipeline proj/tomcat/bin/startup.sh'
                 }
             }
         }
